@@ -13,7 +13,8 @@ from typing import Any
 # l1: [1, 2, 3, 4]
 # l2: [3, 4]
 def proxy_extend(l1: list[Any], l2: list[Any]):
-    pass
+    for item in l2:
+        l1.append(item)
 
 
 # Do not change the below's code
@@ -22,3 +23,9 @@ if __name__ == "__main__":
     proxy_extend(l1, l2)
     assert l1 == [1, 2, 3, 4, 5, 6]
     assert l2 == [4, 5, 6]
+
+
+l1, l2 = [1, 6, 3], [2, 7, 9]
+proxy_extend(l1, l2)
+print(l1)
+print(l2)
